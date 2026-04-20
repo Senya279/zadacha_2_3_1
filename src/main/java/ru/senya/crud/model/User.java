@@ -9,24 +9,27 @@ import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "Surname")
+    @Column(name = "surname")
     private String surname;
 
-    @Column(name = "Age")
+    @Column(name = "age")
     private  int age;
 
-    @Column(name = "Profession")
+    @Column(name = "profession")
     private String profession;
+
+    @Column(name ="password")
+    private String password;
 
     public User(){}
 
@@ -37,6 +40,12 @@ public class User {
         this.profession = profession;
     }
 
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
     public int getId() {
         return id;
     }
